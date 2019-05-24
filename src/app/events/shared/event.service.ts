@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable() // is necessary when a service contains additional dependencies or other services 
 
 export class EventService {
     getEvents() {
-        return EVENTS
+        let subject = new Subject()
+        setTimeout(() => { subject.next(EVENTS); subject.complete(); }, 100)
+        return subject
     }
 
     getEvent(id: number) {

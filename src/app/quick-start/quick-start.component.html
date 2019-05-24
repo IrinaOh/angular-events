@@ -1,0 +1,32 @@
+<h1>{{name}}</h1>
+<div>
+    <p><i>is at {{street}} in {{city}} city in {{region}} region.</i></p>
+</div>
+<fieldset>
+    <img [src]="image" alt="">
+</fieldset>
+
+<br />
+<label [style.color]="color">The color is: </label> {{color}}
+<br />
+<button (click)="clicked()">Toggle Color</button>
+<select (change)="colorChange($event.target.value)">
+    <option>red</option>
+    <option>blue</option>
+    <option>green</option>
+</select>
+<br />
+<br />
+<fieldset [hidden]="hideAddress">
+    <label for="">Street: {{street}}</label><br />
+    <label for="">City: {{city}}</label><br />
+    <label for="">Region: </label>
+    <select (change)="regionChange($event.target.value)">
+        <option>East</option>
+        <option>North</option>
+        <option>South</option>
+        <option>West</option>
+    </select>
+</fieldset>
+<br />
+<button (click)="addressClick()">Show/Hide</button>
