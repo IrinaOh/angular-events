@@ -2,20 +2,25 @@
 <div>
     <p><i>is at {{street}} in {{city}} city in {{region}} region.</i></p>
 </div>
-<fieldset>
-    <img [src]="image" alt="">
-</fieldset>
-
+<div>
+    <label for="">Name:</label>
+    <input [value]="name">
+    <br />
+    <input [value]="name" (input)="name=$event.target.value">
+    <br />
+    <input [value]="name" (keyup)="name=$event.target.value">
+    <br />
+    <input [value]="name" (keyup.enter)="name=$event.target.value">
+    <br />
+    <input [value]="name" (keyup.enter)="name=$event.target.value" (blur)="name=$event.target.value">
+    <br />
+    <input [(ngModel)]="name">
+    <br />
+    <input [ngModel]="name" (ngModelChange)="name=$event">
+</div>
 <br />
-<label [style.color]="color">The color is: </label> {{color}}
-<br />
-<button (click)="clicked()">Toggle Color</button>
-<select (change)="colorChange($event.target.value)">
-    <option>red</option>
-    <option>blue</option>
-    <option>green</option>
-</select>
-<br />
+<button (click)="addressClick()">Show/Hide</button>
+<label for=""> <input type="checkbox" [(ngModel)]="hideAddress">Hide Address</label>
 <br />
 <fieldset [hidden]="hideAddress">
     <label for="">Street: {{street}}</label><br />
@@ -28,5 +33,3 @@
         <option>West</option>
     </select>
 </fieldset>
-<br />
-<button (click)="addressClick()">Show/Hide</button>

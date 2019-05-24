@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'quick-start',
-    templateUrl: './quick-start.component.html'
+    templateUrl: './quick-start.component.html',
+    styles: [`
+        select{ color: black; }
+    `]
 })
 
 export class QuickStartComponent {
@@ -14,13 +17,6 @@ export class QuickStartComponent {
     city = 'Lehi'
     region = 'West'
     hideAddress = false
-    clicked() {
-        this.color = this.color === 'red' ? 'blue' : 'red'
-    }
-
-    colorChange(color: string) {
-        this.color = color
-    }
 
     addressClick() {
         this.hideAddress = !this.hideAddress

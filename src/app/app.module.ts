@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { EventsAppComponent } from "./events-app.component";
 import { EventsListComponent } from "./events/events-list.component";
@@ -19,7 +20,8 @@ import { QuickStartComponent } from './quick-start/quick-start.component';
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   declarations: [
     EventsAppComponent,
