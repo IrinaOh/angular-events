@@ -15,7 +15,9 @@ import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventListResolver } from './events/shared/events-list-resolver.service';
-import { QuickStartComponent } from './quick-start/quick-start.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   imports: [
@@ -31,7 +33,9 @@ import { QuickStartComponent } from './quick-start/quick-start.component';
     NavBarComponent,
     CreateEventComponent,
     Error404Component,
-    QuickStartComponent
+    CustomerListComponent,
+    CustomerDetailComponent,
+    AddressComponent
   ],
   providers: [
     EventService,

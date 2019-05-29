@@ -1,0 +1,11 @@
+select{
+    color: black;
+}
+h1 {
+  color: yellow;
+  font-size: 150%;
+}
+.selected {
+  color: yellow;
+  font-weight: bold;
+}
