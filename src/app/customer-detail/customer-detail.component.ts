@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Customer } from '../model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Customer } from '../model';
 export class CustomerDetailComponent {
 
   @Input() customer: Customer;
+  @Output()
   showAddress = true;
   left() {
 
