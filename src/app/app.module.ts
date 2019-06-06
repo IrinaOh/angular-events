@@ -18,6 +18,8 @@ import { EventListResolver } from './events/shared/events-list-resolver.service'
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AddressComponent } from './address/address.component';
+import { DataService } from './data.service';
+import { LoggerService } from './logger.service';
 
 @NgModule({
   imports: [
@@ -41,6 +43,8 @@ import { AddressComponent } from './address/address.component';
     EventService,
     ToastrService,
     EventRouteActivator,
+    DataService,
+    LoggerService,
     EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',

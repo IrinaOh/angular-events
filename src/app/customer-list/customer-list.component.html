@@ -1,6 +1,7 @@
 <h1>Customers</h1>
 <div>
-  <p><i>Select a customer</i></p>
+  <p *ngIf="isBusy"><i>Loading suctomers</i> </p>
+  <p *ngIf="!isBusy"><i>Select a customer</i></p>
   <!-- customer list -->
   <ul>
     <li *ngFor="let cust of customers" [ngClass]="{selected:customer === cust }" (click)="customer = cust">{{cust.name}}
@@ -8,6 +9,6 @@
   </ul>
   <!-- customer details -->
   <div *ngIf="customer">
-    <customer-detail [customer]="customer"></customer-detail>
+    <customer-detail [customer]="customer" (shift)="shift($event)"></customer-detail>
   </div>
 </div>
