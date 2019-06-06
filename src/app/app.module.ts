@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 import { EventsAppComponent } from "./events-app.component";
 import { EventsListComponent } from "./events/events-list.component";
 import { EventThumbnailComponent } from "./events/event-thumbnail.component";
@@ -21,11 +22,16 @@ import { AddressComponent } from './address/address.component';
 import { DataService } from './data.service';
 import { LoggerService } from './logger.service';
 
+//this two imports are just for development, go away in production
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService) //set up a development server
   ],
   declarations: [
     EventsAppComponent,
